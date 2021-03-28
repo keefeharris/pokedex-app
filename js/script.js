@@ -47,8 +47,14 @@ for(let i = 0; i < pokemonList.length; i++) {
 }
 
 for(let i = 0; i < pokemonList.length; i++) {
+  //for loop goes through each object in array
   if (pokemonList[i].weaknesses.length > 2) {
+    //the length of the weakness array is selected from pokemonList array to carry out condition 
     //template literal were used to specify strings instead of "+" and "''".
+    /*
+    if the object has more than 2 weakness the first document.write statement goes to the document.
+    if the object has less than 2 weakness the second document.write statment goes to the document.
+    */
     document.write(`${pokemonList[i].name} is vulnerable to at least 3 type of pokemon. <br>`);
   } else {
     document.write(`${pokemonList[i].name} is vulnerable to a maximum of 2 types of pokemon. <br>`);
