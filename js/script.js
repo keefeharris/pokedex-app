@@ -34,8 +34,16 @@ pokemonList = [
 console.log(pokemonList.length);
 //logs on to the console the length of my array
 
+/*
+the for loop says if 'i' is less than the length of values in the pokemonList array,
+keep adding 1 to i
+*/
 for(let i = 0; i < pokemonList.length; i++) {
   document.write(pokemonList[i].name + ' is a ' + pokemonList[i].type + ' type pokemon. <br>');
+  //the document.write function write text directly to html
+  //pokemonList[i].name calls the name of the pokemon positioned at number "i" in the pokemonList array
+  //the other charachters are strings that form a sentence in html
+  //<br> element produce a line break in a sentence
 }
 
 
