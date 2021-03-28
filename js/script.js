@@ -46,6 +46,14 @@ for(let i = 0; i < pokemonList.length; i++) {
   //<br> element produce a line break in a sentence
 }
 
+for(let i = 0; i < pokemonList.length; i++) {
+  if (pokemonList[i].weaknesses.length > 2) {
+    //template literal were used to specify strings instead of "+" and "''".
+    document.write(`${pokemonList[i].name} is vulnerable to at least 3 type of pokemon. <br>`);
+  } else {
+    document.write(`${pokemonList[i].name} is vulnerable to a maximum of 2 types of pokemon. <br>`);
+  }
+}
 
 
 
