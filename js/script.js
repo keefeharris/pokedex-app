@@ -6,7 +6,7 @@ pokemonList = [
   {
     name: 'Bulbasaur',
     number: '#001',
-    type: ['grass', 'poison'],
+    type: ['grass'],
     height: 2.04,
     weight: 15.2,
     weaknesses: ['fire', 'psychic', 'flying', 'ice']
@@ -33,6 +33,10 @@ pokemonList = [
 
 console.log(pokemonList.length);
 //logs on to the console the length of my array
+
+for(let i = 0; i < pokemonList.length; i++) {
+  document.write(pokemonList[i].name + ' is a ' + pokemonList[i].type + ' type pokemon.');
+}
 
 
 
