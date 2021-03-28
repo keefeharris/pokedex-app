@@ -2,6 +2,7 @@ let pokemonList = [];
 //an array name pokemonList is created
 
 pokemonList = [
+  //object is added to array
   {
     name: 'Bulbasaur',
     number: '#001',
@@ -10,6 +11,7 @@ pokemonList = [
     weight: 15.2,
     weaknesses: ['fire', 'psychic', 'flying', 'ice']
   },
+  //object is added to array
   {
     name: 'Charmander',
     number: '#004',
@@ -18,6 +20,7 @@ pokemonList = [
     weight: 18.7,
     weaknesses: ['water', 'ground', 'rock']
   },
+  //object is added to array
   {
     name: 'Squirtle',
     number: '#007',
@@ -29,3 +32,16 @@ pokemonList = [
 ];
 
 console.log(pokemonList.length);
+//logs on to the console the length of my array
+
+
+
+
+
+
+
+
+
+
+
+
