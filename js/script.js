@@ -35,7 +35,7 @@ console.log(pokemonList.length);
 //logs on to the console the length of my array
 
 for(let i = 0; i < pokemonList.length; i++) {
-  document.write(pokemonList[i].name + ' is a ' + pokemonList[i].type + ' type pokemon.');
+  document.write(pokemonList[i].name + ' is a ' + pokemonList[i].type + ' type pokemon. <br>');
 }
 
 
