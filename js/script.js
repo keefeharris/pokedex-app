@@ -8,8 +8,8 @@ let pokemonRepository = (function() {
       name: 'Bulbasaur',
       number: '#001',
       type: ['grass'],
-      height: 2.04,
-      weight: 15.2,
+      height: '2.04m',
+      weight: '15.2kg',
       weaknesses: ['fire', 'psychic', 'flying', 'ice']
     },
     //object is added to array
@@ -17,8 +17,8 @@ let pokemonRepository = (function() {
       name: 'Charmander',
       number: '#004',
       type: ['fire'],
-      height: 2.0,
-      weight: 18.7,
+      height: '2.0m',
+      weight: '18.7kg',
       weaknesses: ['water', 'ground', 'rock']
     },
     //object is added to array
@@ -26,8 +26,8 @@ let pokemonRepository = (function() {
       name: 'Squirtle',
       number: '#007',
       type: ['water'],
-      height: 1.08,
-      weight: 19.8,
+      height: '1.08m',
+      weight: '19.8kg',
       weaknesses: ['grass', 'electric']
     }
   ];
@@ -60,6 +60,15 @@ let pokemonRepository = (function() {
   }
 })();
 
+console.log(pokemonRepository.getAll()); //logs to console all objects on pokemonList
+pokemonRepository.add({
+name: 'Dratini', 
+number: '#147', 
+type: ['dragon'], 
+height: '1.8m', 
+weight: '3.3kg', 
+weaknesses: ['ice', 'dragon', 'fairy']
+}); //adds a new object to the pokemonList
 console.log(pokemonRepository.getAll());
 
 
