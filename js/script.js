@@ -60,6 +60,8 @@ function pokemonLoop(user) {
     document.write(user.name + ' is vulnerable to a maximum of 2 types of pokemon. <br>');
   }
 }
+//this function is outside the scope
+//this function will be called by for each through the local getALL()
 
 console.log(pokemonRepository.getAll()); //logs to console all objects on pokemonList
 pokemonRepository.add({
@@ -72,6 +74,7 @@ weaknesses: ['ice', 'dragon', 'fairy']
 }); //adds a new object to the pokemonList
 console.log(pokemonRepository.getAll());
 pokemonRepository.getAll().forEach(pokemonLoop);
+//getAll() gets the pokemonList from the pokemonRepository and iterates the pokemonLoop for each object.
 
 
 
@@ -91,22 +94,6 @@ pokemonRepository.getAll().forEach(pokemonLoop);
 
 
 
-
-//console.log(pokemonList.length);
-//logs on to the console the length of my array
-
-/*
-the for loop says if 'i' is less than the length of values in the pokemonList array,
-keep adding 1 to i
-*/
-
-//for(let i = 0; i < pokemonList.length; i++) {
-  //document.write(pokemonList[i].name + ' is a ' + pokemonList[i].type + ' type pokemon. <br>');
-  //the document.write function write text directly to html
-  //pokemonList[i].name calls the name of the pokemon positioned at number "i" in the pokemonList array
-  //the other charachters are strings that form a sentence in html
-  //<br> element produce a line break in a sentence
-//}
 
 
 
