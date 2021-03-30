@@ -32,6 +32,13 @@ let pokemonRepository = (function() {
     }
   ];
 
+  //forEach() uses pokemonList[] to iterate objects like the for loop
+  //a function declaration is passed as a parameter
+  pokemonList.forEach(function(pokemon) {
+    document.write(pokemon.name + ' is a ' + pokemon.type + ' type pokemon.<br>');
+    //What forEach() does is pass this function for each element in the array
+  })
+
   //this local function is referenced by the return object
   function add(pokemon) {
     pokemonList.push(pokemon);
@@ -42,12 +49,15 @@ let pokemonRepository = (function() {
     return pokemonList;
   }
 
-  //forEach() uses pokemonList[] to iterate objects like the for loop
-  //a function declaration is passed as a parameter
-  pokemonList.forEach(function(pokemon) {
-    document.write(pokemon.name + ' is a ' + pokemon.type + ' type pokemon.<br>');
-    //What forEach() does is pass this function for each element in the array
-  })
+  //the return object references the local functions above
+  return {
+    add: add, 
+    //the first add is property of this object 
+    //the second add is calling the local function add()
+    getAll: getAll 
+    //the first getAll is property of this object 
+    //the second getAll is calling the local function getAll()
+  }
 })();
 
 
