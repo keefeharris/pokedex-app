@@ -71,7 +71,7 @@ weight: '3.3kg',
 weaknesses: ['ice', 'dragon', 'fairy']
 }); //adds a new object to the pokemonList
 console.log(pokemonRepository.getAll());
-
+pokemonRepository.getAll().forEach(pokemonLoop);
 
 
 
