@@ -32,6 +32,11 @@ let pokemonRepository = (function() {
     }
   ];
 
+  //this local function is referenced by the return object
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
   //forEach() uses pokemonList[] to iterate objects like the for loop
   //a function declaration is passed as a parameter
   pokemonList.forEach(function(pokemon) {
