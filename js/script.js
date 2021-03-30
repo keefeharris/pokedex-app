@@ -38,6 +38,12 @@ console.log(pokemonList.length);
 the for loop says if 'i' is less than the length of values in the pokemonList array,
 keep adding 1 to i
 */
+
+pokemonList.forEach(function(pokemon) {
+  
+})
+
+
 for(let i = 0; i < pokemonList.length; i++) {
   document.write(pokemonList[i].name + ' is a ' + pokemonList[i].type + ' type pokemon. <br>');
   //the document.write function write text directly to html
