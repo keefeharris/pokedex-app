@@ -39,8 +39,11 @@ the for loop says if 'i' is less than the length of values in the pokemonList ar
 keep adding 1 to i
 */
 
+//forEach() uses pokemonList[] to iterate objects like the for loop
+//a function declaration is passed as a parameter
 pokemonList.forEach(function(pokemon) {
   document.write(pokemon.name + ' is a ' + pokemon.type + ' type pokemon.<br>');
+  //What forEach() does is pass this function for each element in the array
 })
 
 
