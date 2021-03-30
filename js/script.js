@@ -60,6 +60,7 @@ let pokemonRepository = (function() {
   }
 })();
 
+console.log(pokemonRepository.getAll());
 
 
 
