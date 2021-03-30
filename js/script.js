@@ -34,7 +34,11 @@ let pokemonRepository = (function() {
 
   //this local function is referenced by the return object
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    if(typeof pokemon === 'object') {
+      pokemonList.push(pokemon);
+    } else {
+      prompt('Pokemon entry not applicable!')
+    }
   }
 
   //this local function is referenced by the return object
@@ -64,14 +68,7 @@ function pokemonLoop(user) {
 //this function will be called by for each through the local getALL()
 
 console.log(pokemonRepository.getAll()); //logs to console all objects on pokemonList
-pokemonRepository.add({
-name: 'Dratini', 
-number: '#147', 
-type: ['dragon'], 
-height: '1.8m', 
-weight: '3.3kg', 
-weaknesses: ['ice', 'dragon', 'fairy']
-}); //adds a new object to the pokemonList
+pokemonRepository.add('pokemon entry test'); //adds a new object to the pokemonList
 console.log(pokemonRepository.getAll());
 pokemonRepository.getAll().forEach(pokemonLoop);
 //getAll() gets the pokemonList from the pokemonRepository and iterates the pokemonLoop for each object.
