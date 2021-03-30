@@ -40,7 +40,7 @@ keep adding 1 to i
 */
 
 pokemonList.forEach(function(pokemon) {
-  
+  document.write(pokemon.name + ' is a ' + pokemon.type + ' type pokemon.<br>');
 })
 
 
