@@ -32,13 +32,6 @@ let pokemonRepository = (function() {
     }
   ];
 
-  //forEach() uses pokemonList[] to iterate objects like the for loop
-  //a function declaration is passed as a parameter
-  pokemonList.forEach(function(pokemon) {
-    document.write(pokemon.name + ' is a ' + pokemon.type + ' type pokemon.<br>');
-    //What forEach() does is pass this function for each element in the array
-  })
-
   //this local function is referenced by the return object
   function add(pokemon) {
     pokemonList.push(pokemon);
@@ -60,6 +53,14 @@ let pokemonRepository = (function() {
   }
 })();
 
+function pokemonLoop(user) {
+  if (user.weaknesses.length > 2) {
+    document.write(user.name + ' is vulnerable to at least 3 type of pokemon. <br>');
+  } else {
+    document.write(user.name + ' is vulnerable to a maximum of 2 types of pokemon. <br>');
+  }
+}
+
 console.log(pokemonRepository.getAll()); //logs to console all objects on pokemonList
 pokemonRepository.add({
 name: 'Dratini', 
@@ -70,6 +71,7 @@ weight: '3.3kg',
 weaknesses: ['ice', 'dragon', 'fairy']
 }); //adds a new object to the pokemonList
 console.log(pokemonRepository.getAll());
+
 
 
 
@@ -106,20 +108,7 @@ keep adding 1 to i
   //<br> element produce a line break in a sentence
 //}
 
-//for(let i = 0; i < pokemonList.length; i++) {
-  //for loop goes through each object in array
-  //if (pokemonList[i].weaknesses.length > 2) {
-    //the length of the weakness array is selected from pokemonList array to carry out condition 
-    //template literal were used to specify strings instead of "+" and "''".
-    /*
-    if the object has more than 2 weakness the first document.write statement goes to the document.
-    if the object has less than 2 weakness the second document.write statment goes to the document.
-    */
-    //document.write(`${pokemonList[i].name} is vulnerable to at least 3 type of pokemon. <br>`);
-  //} else {
-    //document.write(`${pokemonList[i].name} is vulnerable to a maximum of 2 types of pokemon. <br>`);
-  //}
-//}
+
 
 
 
