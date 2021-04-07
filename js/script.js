@@ -165,13 +165,7 @@ console.log(pokemonRepository.pokeFilter());
 
 
 
-
-/*
-  function showDetails(pokemon){
-    console.log()
-  }
-  */
- /*
+  /*
   function addNewItem(pokemon) {
     let ulPokemon = document.querySelector('.pokemon-List');
     let listItem = document.createElement('li');
@@ -190,32 +184,8 @@ pokemonRepository.getAll().forEach(function (pokemon) {
 });
 */
 
-/*
-pokemonRepository.getAll().forEach(
-  function(pokemon) {
-    console.log(pokemon.name + ' is a ' + pokemon.type + ' type pokemon.');
-  }
-)
-*/
 
-/*
-Object.keys(pokemonRepository.getAll()).forEach( 
-  function (pokemon) {
-    document.write(pokemon + '<br>');
-  }
-);
-*/
 
-//pokemonRepository.getAll().forEach(function (pokemon));
-//adds a new object (a pokemon)to the pokemonList
 
-//console.log(pokemonRepository.getAll());
-//logs to console all objects on pokemonList including the object I just added
 
-//pokemonRepository.getAll().forEach(function (pokemon)  {
-  //pokemonRepository.addNewItem(pokemon)
-//});
 
-//pokemonRepository.getAll().forEach(function (pokemon)  {
-  //pokemonRepository.propKeys(pokemon)
-//});
