@@ -23,6 +23,10 @@ let pokemonRepository = (function() {
       weaknesses: ['grass', 'electric']
     }
   ];
+
+  function showDetails(pokemon) {
+    console.log(pokemon)
+  }
   
   function addListItem(pokemon){
     let pokemonList = document.querySelector('.pokemon-list');
@@ -60,6 +64,7 @@ let pokemonRepository = (function() {
   }
   
   return {
+    showDetails: showDetails,
     addListItem: addListItem,
     pokeFilter: pokeFilter,
     add: add, 
