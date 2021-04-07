@@ -74,6 +74,7 @@ pokemonRepository.getAll().forEach(function (pokemon) {
   let pokemonList = document.querySelector('.pokemon-list');
   let listPokemon = document.createElement('li');
   let button = document.createElement('button');
+  button.innerText = 'placeholder';
 });
 
 
