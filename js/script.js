@@ -77,7 +77,9 @@ pokemonRepository.getAll().forEach(function (pokemon) {
   button.innerText = 'placeholder';
   button.classList.add('.button-class');
   listPokemon.appendChild(button);
+  pokemonList.appendChild(listPokemon);
 });
+
 
 
 
