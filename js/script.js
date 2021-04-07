@@ -23,6 +23,7 @@ let pokemonRepository = (function() {
       weaknesses: ['grass', 'electric']
     }
   ];
+
   /*
   //function pokeFilter is created
   //variable named filt is defined
@@ -30,21 +31,19 @@ let pokemonRepository = (function() {
   //the parameter 'pokemon' is passed and returned with dot notation to find the name ".name" value of Dratini.
   //the filt variable is then logged on the console when pokeFilter is called
   */
- /*
   function pokeFilter() {
     let filt = pokemonList.filter(function (pokemon) {
       return pokemon.name === 'Dratini';
     });
     console.log(filt);
   }
-  */
+  
   //this local function is referenced by the return object
   /*
     The typeof operator returns a string indicating the type of the unevaluated operand.
     Operands can be any of the JavaScript data types, as well as objects or arrays.
     The '===' operator checks for equal value and equal type.
     We want the type of parameter added to be equal to an 'object'......a pokemon.
-  
   /*
    Object keys return the properties in the object (for this project properties are name, number, type, etc...)
    pokemonList[0] is the parameter of the Object.keys() method
@@ -52,7 +51,7 @@ let pokemonRepository = (function() {
    The dot notation provide access to an object's properties
    The every() method checks if all elements in an array pass a test
    In the every method, key is a parameter to check for the 'keys' in item parameter which is the pokemon "object" we want to add
-   */
+  */
   function add(pokemon) {
     if(typeof pokemon === 'object') {
       console.log(
@@ -75,7 +74,7 @@ let pokemonRepository = (function() {
   //the return object references the local functions above
   return {
     //addNewItem: addNewItem,
-    //pokeFilter: pokeFilter,
+    pokeFilter: pokeFilter,
     add: add, 
     getAll: getAll 
     //the first getAll is property of this object 
@@ -93,7 +92,7 @@ pokemonRepository.add({
 });
 
 console.log(pokemonRepository.getAll()); 
-//console.log(pokemonRepository.pokeFilter());
+console.log(pokemonRepository.pokeFilter());
 //logs content retrived from the pokeFilter function in the pokemonRepository 
 
 
