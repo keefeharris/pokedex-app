@@ -71,7 +71,8 @@ console.log(pokemonRepository.getAll());
 console.log(pokemonRepository.pokeFilter());
 
 pokemonRepository.getAll().forEach(function (pokemon) {
-
+  let pokemonList = document.querySelector('.pokemon-list');
+  
 });
 
 
