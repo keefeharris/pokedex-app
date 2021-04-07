@@ -24,6 +24,8 @@ let pokemonRepository = (function() {
     }
   ];
   
+  function addListItem (){}
+
   function pokeFilter() {
     let filt = pokemonList.filter(function (pokemon) {
       return pokemon.name === 'Dratini';
@@ -50,7 +52,7 @@ let pokemonRepository = (function() {
   }
   
   return {
-    //addNewItem: addNewItem,
+    addListItem: addListItem,
     pokeFilter: pokeFilter,
     add: add, 
     getAll: getAll
