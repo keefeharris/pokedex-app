@@ -44,12 +44,10 @@ let pokemonRepository = (function() {
       alert(pokemon.name + ' is not an applicable entry in the Pokedex!');
     }
   }
-
   
   function getAll() {
     return pokemonList;
   }
-
   
   return {
     //addNewItem: addNewItem,
@@ -69,7 +67,12 @@ pokemonRepository.add({
 });
 
 console.log(pokemonRepository.getAll()); 
+
 console.log(pokemonRepository.pokeFilter());
+
+pokemonRepository.getAll().forEach(function (pokemon) {
+
+});
 
 
 
