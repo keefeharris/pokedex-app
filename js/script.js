@@ -25,7 +25,9 @@ let pokemonRepository = (function() {
   ];
 
   function showDetails(pokemon) {
-    console.log(pokemon)
+      for (pokemon = 0; pokemon < pokemonList.length; pokemon++) {
+        console.log(pokemonList[pokemon].name);
+    }
   }
   
   function addListItem(pokemon){
@@ -36,6 +38,7 @@ let pokemonRepository = (function() {
     button.classList.add('.button-class');
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
+    button.addEventListener('click', showDetails);
   }
 
   function pokeFilter() {
@@ -72,7 +75,7 @@ let pokemonRepository = (function() {
   }
 })();
 
-console.log(pokemonRepository.getAll());
+//console.log(pokemonRepository.getAll());
 
 pokemonRepository.add({
   name: 'Dratini', 
@@ -81,9 +84,9 @@ pokemonRepository.add({
   weaknesses: ['ice', 'dragon', 'fairy']
 });
 
-console.log(pokemonRepository.getAll()); 
+//console.log(pokemonRepository.getAll()); 
 
-console.log(pokemonRepository.pokeFilter());
+//console.log(pokemonRepository.pokeFilter());
 
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
