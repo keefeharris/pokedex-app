@@ -14,6 +14,12 @@ let pokemonRepository = (function () {
     pokemonList.appendChild(listPokemon);
   }
 
+  //promise function (loadList) is created to fetch API then it will return a response object thats converted with .json
+  function loadList() {
+    return fetch(apiUrl).then(function (response) {
+        return response.json();
+  }
+
   function add(pokemon) {
     if (typeof pokemon === "object") {
       console.log(
