@@ -58,17 +58,11 @@ let pokemonRepository = (function () {
   };
 })();
 
-console.log(pokemonRepository.getAll());
-
-pokemonRepository.add({
-  name: "Dratini",
-  number: "#147",
-  type: "dragon",
-  weaknesses: ["ice", "dragon", "fairy"],
-});
-
-pokemonRepository.getAll().forEach(function (pokemon) {
-  pokemonRepository.addListItem(pokemon);
+//we pass the loadList to get all the pokemon then it will pass the 2 functions (getAll & addListItem) as values
+pokemonRepository.loadList().then(function () {
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
 });
 
 /*
