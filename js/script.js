@@ -1,28 +1,8 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
 
-  pokemonList = [
-    {
-      name: "Bulbasaur",
-      number: "#001",
-      type: "grass",
-      weaknesses: ["fire", "psychic", "flying", "ice"],
-    },
-
-    {
-      name: "Charmander",
-      number: "#004",
-      type: "fire",
-      weaknesses: ["water", "ground", "rock"],
-    },
-
-    {
-      name: "Squirtle",
-      number: "#007",
-      type: "water",
-      weaknesses: ["grass", "electric"],
-    },
-  ];
+  //pokemon from the API will fill this array
+  pokemonList = [];
 
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
