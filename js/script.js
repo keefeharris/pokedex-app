@@ -17,17 +17,27 @@ let pokemonRepository = (function () {
   //promise function (loadList) is created to fetch API (by using apiUrl variable) then it will return a response object thats converted with .json
   //then a function with json parameter (the main object) is passed, for each pokemon (results), a pokemon variable is created with 2 keys, name & detailsURL. the parameter "item" is the unnamed object under results and using dot notation we access the name.
   //for each pokemon thats iterated, we use the add function to add the pokemon (add(pokemon))
+  //the catch function will catch any errors from the api
   function loadList() {
-    return fetch(apiUrl).then(function (response) {
-        return response.json(); 
-      }).then(function (json) {
-          json.results.forEach(function (item) {
-            let pokemon = {
-              name: item.name,
-              detailsUrl: item.url,
-            }; add(pokemon);
+    return fetch(apiUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        json.results.forEach(function (item) {
+          let pokemon = {
+            name: item.name,
+            detailsUrl: item.url,
+          };
+          add(pokemon);
+        });
+      })
+      .catch(function (e) {
+        console.error(e);
+      });
   }
 
+  //pokemon will be added from the promise function
   function add(pokemon) {
     if (typeof pokemon === "object" && "name" in pokemon) {
       pokemonList.push(pokemon);
