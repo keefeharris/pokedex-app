@@ -1,8 +1,8 @@
 let pokemonRepository = (function () {
-  let pokemonList = [];
-
   //pokemon from the API will fill this array
-  pokemonList = [];
+  //apiUrl is the link to the pokemon API we will use for our objects
+  let pokemonList = [];
+  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
