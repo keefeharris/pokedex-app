@@ -52,6 +52,7 @@ let pokemonRepository = (function () {
   //variable url is created and is set to the detailsUrl from the loadList
   //the url variable is used to fetch the response object which is then converted by json
   //then we call another function for the converted response object to get details from the items parameter of the loadDetails function
+  //the catch function will catch any errors that occured.
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url)
@@ -73,6 +74,7 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     getAll: getAll,
     loadList: loadList,
+    loadDetails: loadDetails,
   };
 })();
 
