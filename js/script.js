@@ -18,6 +18,7 @@ let pokemonRepository = (function () {
     return pokemonList;
   }
 
+  //an eventListener was added to activate showDetails function when clicked
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
     let listPokemon = document.createElement("li");
@@ -26,7 +27,11 @@ let pokemonRepository = (function () {
     button.classList.add(".button-class");
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
+    button.addEventListener("click", function (event) {
+      showDetails(pokemon);
+    });
   }
+
   //promise function (loadList) is created to fetch API (by using apiUrl variable) then it will return a response object thats converted with .json
   //then a function with json parameter (the main object) is passed, for each pokemon (results), a pokemon variable is created with 2 keys, name & detailsURL. the parameter "item" is the unnamed object under results and using dot notation we access the name.
   //for each pokemon thats iterated, we use the add function to add the pokemon (add(pokemon))
