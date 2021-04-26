@@ -14,10 +14,17 @@ let pokemonRepository = (function () {
     pokemonList.appendChild(listPokemon);
   }
 
-  //promise function (loadList) is created to fetch API then it will return a response object thats converted with .json
+  //promise function (loadList) is created to fetch API (by using apiUrl variable) then it will return a response object thats converted with .json
+  //then a function with json parameter (the main object) is passed, for each pokemon (results), a pokemon variable is created with 2 keys, name & detailsURL
   function loadList() {
     return fetch(apiUrl).then(function (response) {
-        return response.json();
+        return response.json(); 
+      }).then(function (json) {
+          json.results.forEach(function (item) {
+            let pokemon = {
+              name: item.name,
+              detailsUrl: item.url,
+            };
   }
 
   function add(pokemon) {
