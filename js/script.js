@@ -29,21 +29,10 @@ let pokemonRepository = (function () {
   }
 
   function add(pokemon) {
-    if (typeof pokemon === "object") {
-      console.log(
-        "Is this a pokemon? " +
-          Object.keys(pokemonList[0]).every((property) => property in pokemon)
-      );
-      if (
-        Object.keys(pokemonList[0]).every((property) => property in pokemon)
-      ) {
-        alert(
-          "New pokemon named " + pokemon.name + " has been added to Pokedex."
-        );
-      }
+    if (typeof pokemon === "object" && "name" in pokemon) {
       pokemonList.push(pokemon);
     } else {
-      alert(pokemon.name + " is not an applicable entry in the Pokedex!");
+      console.log(pokemon.name + " is not an applicable entry in the Pokedex!");
     }
   }
 
