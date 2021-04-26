@@ -4,16 +4,6 @@ let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
-  function addListItem(pokemon) {
-    let pokemonList = document.querySelector(".pokemon-list");
-    let listPokemon = document.createElement("li");
-    let button = document.createElement("button");
-    button.innerText = pokemon.name;
-    button.classList.add(".button-class");
-    listPokemon.appendChild(button);
-    pokemonList.appendChild(listPokemon);
-  }
-
   //pokemon will be added from the promise function
   function add(pokemon) {
     if (typeof pokemon === "object" && "name" in pokemon) {
@@ -23,8 +13,19 @@ let pokemonRepository = (function () {
     }
   }
 
+  //returns pokemon from pokemonList
   function getAll() {
     return pokemonList;
+  }
+
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listPokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add(".button-class");
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon);
   }
   //promise function (loadList) is created to fetch API (by using apiUrl variable) then it will return a response object thats converted with .json
   //then a function with json parameter (the main object) is passed, for each pokemon (results), a pokemon variable is created with 2 keys, name & detailsURL. the parameter "item" is the unnamed object under results and using dot notation we access the name.
@@ -69,10 +70,17 @@ let pokemonRepository = (function () {
       });
   }
 
+  //loadDetails is going to take information for a specific pokemon
+  function showDetails(item) {
+    pokemonRepository.loadDetails(item).then(function () {
+      console.log(item);
+    });
+  }
+
   return {
     add: add,
-    addListItem: addListItem,
     getAll: getAll,
+    addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
   };
