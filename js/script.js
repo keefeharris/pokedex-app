@@ -50,8 +50,19 @@ let pokemonRepository = (function () {
   }
 
   //variable url is created and is set to the detailsUrl from the loadList
+  //the url variable is used to fetch the response object which is then converted by json
+  //then we call another function for the converted response object to get details from the items parameter of the loadDetails function
   function loadDetails(item) {
     let url = item.detailsUrl;
+    return fetch(url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (details) {
+        item.imageUrl = details.sprites.front_default;
+        item.height = details.height;
+        item.types = details.types;
+      });
   }
 
   return {
