@@ -21,12 +21,12 @@ let pokemonRepository = (function () {
   //an eventListener was added to activate showDetails function when clicked
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
-    let listPokemon = document.createElement("li");
+    let listItem = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add(".button-class");
-    listPokemon.appendChild(button);
-    pokemonList.appendChild(listPokemon);
+    listItem.appendChild(button);
+    pokemonList.appendChild(listItem);
     button.addEventListener("click", function (event) {
       showDetails(pokemon);
     });
