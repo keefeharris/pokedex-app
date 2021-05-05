@@ -48,6 +48,11 @@ let pokemonRepository = (function () {
     let elementTypes = $("<p>" + "types : " + item.types + "</p>");
 
     modalTitle.append(nameElement);
+    modalBody.append(imageElementFront);
+    modalBody.append(imageElementBack);
+    modalBody.append(heightElement);
+    modalBody.append(weightElement);
+    modalBody.append(elementTypes);
   }
 
   function loadDetails(item) {
