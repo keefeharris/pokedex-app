@@ -29,6 +29,9 @@ let pokemonRepository = (function () {
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
     let modalHeader = $(".modal-header");
+
+    modalTitle.empty();
+    modalHeader.empty();
   }
 
   function loadDetails(item) {
