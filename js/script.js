@@ -46,6 +46,8 @@ let pokemonRepository = (function () {
     let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
 
     let elementTypes = $("<p>" + "types : " + item.types + "</p>");
+
+    modalTitle.append(nameElement);
   }
 
   function loadDetails(item) {
