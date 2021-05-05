@@ -42,6 +42,8 @@ let pokemonRepository = (function () {
     imageElementBack.attr("src", item.imageUrlBack);
 
     let heightElement = $("<p>" + "height : " + item.height + "</p>");
+
+    let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
   }
 
   function loadDetails(item) {
