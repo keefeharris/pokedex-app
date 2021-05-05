@@ -25,7 +25,11 @@ let pokemonRepository = (function () {
     });
   }
 
-  function showModal() {}
+  function showModal() {
+    let modalBody = $(".modal-body");
+    let modalTitle = $(".modal-title");
+    let modalHeader = $(".modal-header");
+  }
 
   function loadDetails(item) {
     let url = item.detailsUrl;
