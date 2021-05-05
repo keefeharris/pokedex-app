@@ -44,6 +44,8 @@ let pokemonRepository = (function () {
     let heightElement = $("<p>" + "height : " + item.height + "</p>");
 
     let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
+
+    let elementTypes = $("<p>" + "types : " + item.types + "</p>");
   }
 
   function loadDetails(item) {
