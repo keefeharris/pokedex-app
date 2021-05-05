@@ -32,6 +32,8 @@ let pokemonRepository = (function () {
 
     modalTitle.empty();
     modalHeader.empty();
+
+    let nameElement = $("<h1>" + item.name + "</h1>");
   }
 
   function loadDetails(item) {
