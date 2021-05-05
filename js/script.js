@@ -1,9 +1,7 @@
 let pokemonRepository = (function () {
-  
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
-  
   function getAll() {
     return pokemonList;
   }
@@ -20,12 +18,14 @@ let pokemonRepository = (function () {
       showDetails(pokemon);
     });
   }
- 
+
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
       console.log(item);
     });
   }
+
+  function showModal() {}
 
   function loadDetails(item) {
     let url = item.detailsUrl;
