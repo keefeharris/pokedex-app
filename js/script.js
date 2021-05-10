@@ -2,6 +2,14 @@ let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
+  function add(pokemon) {
+    if (typeof pokemon === "object") {
+      pokemonList.push(pokemon);
+    } else {
+      console.log(pokemon.name + " is not an applicable entry in the Pokedex!");
+    }
+  }
+
   function getAll() {
     return pokemonList;
   }
@@ -11,23 +19,26 @@ let pokemonRepository = (function () {
     let listItem = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
-    button.classList.add(".button-class");
+    button.classList.add("btn");
+    button.classList.add("btn-list");
     button.setAttribute("data-toggle", "modal");
     button.setAttribute("data-target", "#exampleModal");
+
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
-    button.addEventListener("click", function (event) {
+    button.addEventListener("click", function () {
       showDetails(pokemon);
     });
   }
 
-  function showDetails(item) {
-    pokemonRepository.loadDetails(item).then(function () {
-      console.log(item);
+  function showDetails(pokemon) {
+    pokemonRepository.loadDetails(pokemon).then(function () {
+      showModal(pokemon);
+      console.log(pokemon);
     });
   }
 
-  function showModal() {
+  function showModal(pokemon) {
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
     let modalHeader = $(".modal-header");
@@ -36,26 +47,19 @@ let pokemonRepository = (function () {
     modalTitle.empty();
     modalHeader.empty();
 
-    let nameElement = $("<h1>" + item.name + "</h1>");
+    let nameElement = $("<h1>" + pokemon.name + "</h1>");
 
-    let imageElementFront = $('<img class="modal-image" style="width:50%">');
-    imageElementFront.attr("src", item.imageUrlFront);
+    let imagePokemon = $('<img class="pokemon-image">');
+    imagePokemon.attr("src", pokemon.imageUrl);
 
-    let imageElementBack = $('<img class="modal-image" style="width:50%">');
-    imageElementBack.attr("src", item.imageUrlBack);
+    let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
 
-    let heightElement = $("<p>" + "height : " + item.height + "</p>");
+    let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
 
-    let weightElement = $("<p>" + "weight : " + item.weight + "</p>");
-
-    let elementTypes = $("<p>" + "types : " + item.types + "</p>");
-
-    modalTitle.append(nameElement);
-    modalBody.append(imageElementFront);
-    modalBody.append(imageElementBack);
+    modalHeader.append(nameElement);
+    modalBody.append(imagePokemon);
     modalBody.append(heightElement);
     modalBody.append(weightElement);
-    modalBody.append(elementTypes);
   }
 
   function loadDetails(item) {
@@ -67,7 +71,6 @@ let pokemonRepository = (function () {
       .then(function (details) {
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
-        item.types = details.types;
         item.weight = details.weight;
       })
       .catch(function (e) {
@@ -81,12 +84,13 @@ let pokemonRepository = (function () {
         return response.json();
       })
       .then(function (json) {
-        json.results.forEach(function (item) {
+        json.results.forEach(function (item, pokemonNumber) {
           let pokemon = {
             name: item.name,
-            height: item.height,
-            weight: item.weight,
             detailsUrl: item.url,
+            imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+              pokemonNumber + 1
+            }.png`,
           };
           add(pokemon);
         });
@@ -96,26 +100,13 @@ let pokemonRepository = (function () {
       });
   }
 
-  function add(pokemon) {
-    if (
-      typeof pokemon === "object" &&
-      "name" in pokemon &&
-      "height" in pokemon &&
-      "weight" in pokemon
-    ) {
-      pokemonList.push(pokemon);
-    } else {
-      console.log(pokemon.name + " is not an applicable entry in the Pokedex!");
-    }
-  }
-
   return {
+    showDetails: showDetails,
+    addListItem: addListItem,
     add: add,
     getAll: getAll,
-    addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails,
   };
 })();
 
