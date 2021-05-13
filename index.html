@@ -12,15 +12,24 @@
     />
     <link rel="spreadsheet" type="text/css" href="css/styles.css" />
   </head>
+
   <body>
-    <div class="text-center">
-      <!--Add class .text-center to the parent div to align any item inside to the center.-->
-      <ul class="pokemon-list list-group"></ul>
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">PokeDex App</span>
+    </nav>
+    <!--buttons from pokemonList-->
+    <div class="container">
+      <div class="row">
+        <div class="col-4"></div>
+        <ul class="pokemon-list list-group col-4 text-center"></ul>
+        <div class="col-4"></div>
+      </div>
     </div>
+
     <!-- Modal -->
     <div
       class="modal fade text-center"
-      id="exampleModal"
+      id="pokeModal"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalLabel"
