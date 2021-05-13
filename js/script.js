@@ -46,10 +46,12 @@ let pokemonRepository = (function () {
     let nameElement = document.createElement("h1");
     nameElement.innerText = pokemon.name;
     nameElement.classList.add("text-capitalize");
-    let imagePokemon = $('<img class="pokemon-image">');
+    let imagePokemon = $(
+      '<img class="pokemon-image" height="200px" width="200px">'
+    );
     imagePokemon.attr("src", pokemon.imageUrl);
-    let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
-    let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
+    let heightElement = $("<p>" + "Height : " + pokemon.height + "</p>");
+    let weightElement = $("<p>" + "Weight : " + pokemon.weight + "</p>");
 
     modalBody.append(nameElement);
     modalBody.append(imagePokemon);
