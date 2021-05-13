@@ -15,7 +15,7 @@
 
   <body>
     <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">PokeDex App</span>
+      <h1 class="navbar-text" sr-only sr-only-focusable">PokeDex App</h1>
     </nav>
     <!--buttons from pokemonList-->
     <div class="container">
@@ -32,7 +32,7 @@
       id="pokeModal"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="pokeModal"
       aria-hidden="true"
     >
       <div class="modal-dialog" role="document">
@@ -45,6 +45,7 @@
               data-dismiss="modal"
             >
               Close
+              <span aria-hidden="true">&times;</span> 
             </button>
           </div>
         </div>
