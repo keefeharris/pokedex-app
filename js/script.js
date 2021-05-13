@@ -18,12 +18,13 @@ let pokemonRepository = (function () {
     let pokemonList = document.querySelector(".pokemon-list");
     let listItem = document.createElement("li");
     listItem.classList.add("list-group-item");
+    listItem.classList.add("list-group-item-light");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("text-capitalize");
     button.classList.add("btn-light");
     button.setAttribute("data-toggle", "modal");
-    button.setAttribute("data-target", "#exampleModal");
+    button.setAttribute("data-target", "#pokeModal");
     listItem.append(button);
     pokemonList.append(listItem);
     button.addEventListener("click", function () {
