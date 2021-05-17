@@ -4,7 +4,7 @@ let pokemonRepository = (function () {
   function n(e) {
     "object" == typeof e
       ? t.push(e)
-      : console.log(e.name + " is not an applicable entry in the Pokedex!");
+      : alert(e.name + " is not an applicable entry in the Pokedex!");
   }
   function o(t) {
     pokemonRepository.loadDetails(t).then(function () {
@@ -18,8 +18,7 @@ let pokemonRepository = (function () {
         let i = $("<p>Height : " + t.height + "</p>"),
           a = $("<p>Weight : " + t.weight + "</p>");
         e.append(n), e.append(o), e.append(i), e.append(a);
-      })(t),
-        console.log(t);
+      })(t);
     });
   }
   return {
