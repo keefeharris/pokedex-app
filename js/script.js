@@ -1,4 +1,4 @@
-(function () {
+let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
@@ -6,7 +6,7 @@
     if (typeof pokemon === "object") {
       pokemonList.push(pokemon);
     } else {
-      console.log(pokemon.name + " is not an applicable entry in the Pokedex!");
+      alert(pokemon.name + " is not an applicable entry in the Pokedex!");
     }
   }
 
@@ -35,7 +35,6 @@
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
       showModal(pokemon);
-      console.log(pokemon);
     });
   }
 
